@@ -158,9 +158,9 @@ int DRV_ili9488_Initialize(void)
     return 0;
 }
 
-static int DRV_ili9488_Configure(ili9488_DRV *drv)
+static int DRV_ili9488_Configure(ili9488_DRV *drvPtr)
 {
-    GFX_Disp_Intf intf = (GFX_Disp_Intf) drv->port_priv;
+    GFX_Disp_Intf intf = (GFX_Disp_Intf) drvPtr->port_priv;
     uint8_t cmd;
     uint8_t parms[16];
 
@@ -224,9 +224,14 @@ static int DRV_ili9488_Configure(ili9488_DRV *drv)
 */
 void DRV_ili9488_Update(void)
 {
+    uint32_t openVal;
+    
     if(drv.state == INIT)
     {
-        drv.port_priv = (void *) GFX_Disp_Intf_Open();
+        openVal = GFX_Disp_Intf_Open();
+        
+        drv.port_priv = (void *)openVal;
+        
         if (drv.port_priv == 0)
         {
             drv.state = ERROR;
@@ -241,57 +246,10 @@ void DRV_ili9488_Update(void)
     }
 }
 
-gfxColorMode DRV_ili9488_GetColorMode(void)
-{
-    return PIXEL_BUFFER_COLOR_MODE;
-}
-
-uint32_t DRV_ili9488_GetBufferCount(void)
-{
-    return 1;
-}
-
-uint32_t DRV_ili9488_GetDisplayWidth(void)
-{
-    return SCREEN_WIDTH;
-}
-
-uint32_t DRV_ili9488_GetDisplayHeight(void)
-{
-    return SCREEN_HEIGHT;
-}
-
-uint32_t DRV_ili9488_GetLayerCount()
-{
-    return 1;
-}
-
-uint32_t DRV_ili9488_GetActiveLayer()
-{
-    return 0;
-}
-
-gfxLayerState DRV_ili9488_GetLayerState(uint32_t idx)
-{
-    gfxLayerState state;
-
-    state.rect.x = 0;
-    state.rect.y = 0;
-    state.rect.width = SCREEN_WIDTH;
-    state.rect.height = SCREEN_HEIGHT;
-    state.enabled = GFX_TRUE;
-
-    return state;
-}
-
-gfxResult DRV_ili9488_SetActiveLayer(uint32_t idx)
-{
-    return GFX_SUCCESS;
-}
 
 gfxResult DRV_ili9488_BlitBuffer(int32_t x,
-                                int32_t y,
-                                gfxPixelBuffer* buf)
+                                           int32_t y,
+                                           gfxPixelBuffer* buf)
 {
 
     int row;
@@ -350,20 +308,80 @@ gfxResult DRV_ili9488_BlitBuffer(int32_t x,
     return GFX_SUCCESS;
 }
 
-void DRV_ili9488_Swap(void)
+gfxDriverIOCTLResponse DRV_ili9488_IOCTL(gfxDriverIOCTLRequest request,
+                                     void* arg)
 {
-    swapCount++;
-}
-
-uint32_t DRV_ili9488_GetSwapCount(void)
-{
-    return swapCount;
-}
-
-gfxResult DRV_ili9488_SetPalette(gfxBuffer* palette,
-                                           gfxColorMode mode,
-                                           uint32_t colorCount)
-{
-    return GFX_FAILURE;
+    gfxIOCTLArg_Value* val;
+    gfxIOCTLArg_DisplaySize* disp;
+    gfxIOCTLArg_LayerRect* rect;
+    
+    switch(request)
+    {
+        case GFX_IOCTL_GET_COLOR_MODE:
+        {
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            val->value.v_colormode = PIXEL_BUFFER_COLOR_MODE;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_BUFFER_COUNT:
+        {
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            val->value.v_uint = 1;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_DISPLAY_SIZE:
+        {
+            disp = (gfxIOCTLArg_DisplaySize*)arg;            
+            
+            disp->width = DISPLAY_WIDTH;
+            disp->height = DISPLAY_HEIGHT;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_LAYER_COUNT:
+        {
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            val->value.v_uint = 1;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_ACTIVE_LAYER:
+        {
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            val->value.v_uint = 0;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_LAYER_RECT:
+        {
+            rect = (gfxIOCTLArg_LayerRect*)arg;
+            
+            rect->base.id = 0;
+            rect->x = 0;
+            rect->y = 0;
+            rect->width = DISPLAY_WIDTH;
+            rect->height = DISPLAY_HEIGHT;
+            
+            return GFX_IOCTL_OK;
+        }
+        case GFX_IOCTL_GET_VSYNC_COUNT:
+        {
+            val = (gfxIOCTLArg_Value*)arg;
+            
+            val->value.v_uint = swapCount;
+            
+            return GFX_IOCTL_OK;
+        }
+        default:
+        { }
+    }
+    
+    return GFX_IOCTL_UNSUPPORTED;
 }
 

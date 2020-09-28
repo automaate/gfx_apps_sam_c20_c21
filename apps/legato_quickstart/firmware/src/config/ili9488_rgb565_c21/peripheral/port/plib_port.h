@@ -65,54 +65,50 @@
 // *****************************************************************************
 // *****************************************************************************
 
-  
 /*** Macros for GFX_DISP_INTF_PIN_BACKLIGHT pin ***/
 #define GFX_DISP_INTF_PIN_BACKLIGHT_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 12)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 12)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 12)
-#define GFX_DISP_INTF_PIN_BACKLIGHT_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 12)) & 0x01)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 12)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 12)
+#define GFX_DISP_INTF_PIN_BACKLIGHT_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 12)) & 0x01)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_PIN                  PORT_PIN_PB12
 
 /*** Macros for BSP_MAXTOUCH_CHG pin ***/
 #define BSP_MAXTOUCH_CHG_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 14)
 #define BSP_MAXTOUCH_CHG_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 14)
 #define BSP_MAXTOUCH_CHG_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 14)
-#define BSP_MAXTOUCH_CHG_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 14)) & 0x01)
 #define BSP_MAXTOUCH_CHG_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 14)
 #define BSP_MAXTOUCH_CHG_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 14)
+#define BSP_MAXTOUCH_CHG_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 14)) & 0x01)
 #define BSP_MAXTOUCH_CHG_PIN                  PORT_PIN_PB14
 
 /*** Macros for GFX_DISP_INTF_PIN_RESET pin ***/
 #define GFX_DISP_INTF_PIN_RESET_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = 1 << 15)
 #define GFX_DISP_INTF_PIN_RESET_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = 1 << 15)
 #define GFX_DISP_INTF_PIN_RESET_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = 1 << 15)
-#define GFX_DISP_INTF_PIN_RESET_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 15)) & 0x01)
 #define GFX_DISP_INTF_PIN_RESET_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = 1 << 15)
 #define GFX_DISP_INTF_PIN_RESET_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = 1 << 15)
+#define GFX_DISP_INTF_PIN_RESET_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 15)) & 0x01)
 #define GFX_DISP_INTF_PIN_RESET_PIN                  PORT_PIN_PB15
 
 /*** Macros for GFX_DISP_INTF_PIN_CS pin ***/
 #define GFX_DISP_INTF_PIN_CS_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 17)
 #define GFX_DISP_INTF_PIN_CS_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 17)
 #define GFX_DISP_INTF_PIN_CS_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 17)
-#define GFX_DISP_INTF_PIN_CS_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 17)) & 0x01)
 #define GFX_DISP_INTF_PIN_CS_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 17)
 #define GFX_DISP_INTF_PIN_CS_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 17)
+#define GFX_DISP_INTF_PIN_CS_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 17)) & 0x01)
 #define GFX_DISP_INTF_PIN_CS_PIN                  PORT_PIN_PA17
 
 /*** Macros for GFX_DISP_INTF_PIN_RSDC pin ***/
 #define GFX_DISP_INTF_PIN_RSDC_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 20)
 #define GFX_DISP_INTF_PIN_RSDC_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 20)
 #define GFX_DISP_INTF_PIN_RSDC_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 20)
-#define GFX_DISP_INTF_PIN_RSDC_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 20)) & 0x01)
 #define GFX_DISP_INTF_PIN_RSDC_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 20)
 #define GFX_DISP_INTF_PIN_RSDC_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 20)
+#define GFX_DISP_INTF_PIN_RSDC_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 20)) & 0x01)
 #define GFX_DISP_INTF_PIN_RSDC_PIN                  PORT_PIN_PA20
-
-
-
 // *****************************************************************************
 /* PORT Group
 
@@ -922,7 +918,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -961,7 +957,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins

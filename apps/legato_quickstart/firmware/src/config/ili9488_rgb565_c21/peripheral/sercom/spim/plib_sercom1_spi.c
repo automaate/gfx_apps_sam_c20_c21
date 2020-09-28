@@ -57,8 +57,8 @@
 /* SERCOM1 clk freq value for the baud calculation */
 #define SERCOM1_Frequency      (uint32_t) (48000000UL)
 
-/* SERCOM1 SPI baud value for 8000000 Hz baud rate */
-#define SERCOM1_SPIM_BAUD_VALUE         (2U)
+/* SERCOM1 SPI baud value for 1000000 Hz baud rate */
+#define SERCOM1_SPIM_BAUD_VALUE         (23U)
 
 /*Global object to save SPI Exchange related data  */
 SPI_OBJECT sercom1SPIObj;
@@ -105,7 +105,7 @@ void SERCOM1_SPI_Initialize(void)
      * Data In and Pin Out,Data Order and Standby mode if configured
      * and Selection of the Clock Phase and Polarity and Enable the SPI Module
      */
-    SERCOM1_REGS->SPIM.SERCOM_CTRLA = SERCOM_SPIM_CTRLA_MODE_SPI_MASTER | SERCOM_SPIM_CTRLA_DOPO_PAD1 | SERCOM_SPIM_CTRLA_DIPO_PAD0 | SERCOM_SPIM_CTRLA_CPOL_IDLE_LOW | SERCOM_SPIM_CTRLA_CPHA_LEADING_EDGE | SERCOM_SPIM_CTRLA_DORD_MSB | SERCOM_SPIM_CTRLA_ENABLE_Msk ;
+    SERCOM1_REGS->SPIM.SERCOM_CTRLA = SERCOM_SPIM_CTRLA_MODE_SPI_MASTER | SERCOM_SPIM_CTRLA_DOPO_PAD0 | SERCOM_SPIM_CTRLA_DIPO_PAD0 | SERCOM_SPIM_CTRLA_CPOL_IDLE_LOW | SERCOM_SPIM_CTRLA_CPHA_LEADING_EDGE | SERCOM_SPIM_CTRLA_DORD_MSB | SERCOM_SPIM_CTRLA_ENABLE_Msk ;
 
     /* Wait for synchronization */
     while(SERCOM1_REGS->SPIM.SERCOM_SYNCBUSY);

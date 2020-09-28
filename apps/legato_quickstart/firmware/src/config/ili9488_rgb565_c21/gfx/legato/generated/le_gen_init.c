@@ -35,7 +35,7 @@ void legato_hideCurrentScreen()
 
 void legato_showScreen(uint32_t id)
 {
-    legato_hideCurrentScreen(currentScreen);
+    legato_hideCurrentScreen();
 
     switch(id)
     {

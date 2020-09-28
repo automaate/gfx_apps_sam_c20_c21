@@ -22,8 +22,8 @@ void legato_initialize(void);
 // global screen control functions
 uint32_t legato_getCurrentScreen(void);
 void legato_showScreen(uint32_t id);
-void legato_hideCurrentScreen();
-void legato_updateCurrentScreen();
+void legato_hideCurrentScreen(void);
+void legato_updateCurrentScreen(void);
 
 //DOM-IGNORE-BEGIN
 

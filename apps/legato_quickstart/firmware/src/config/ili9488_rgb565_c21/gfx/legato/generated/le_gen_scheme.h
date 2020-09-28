@@ -14,7 +14,7 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
-void legato_initialize_schemes();
+void legato_initialize_schemes(void);
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
