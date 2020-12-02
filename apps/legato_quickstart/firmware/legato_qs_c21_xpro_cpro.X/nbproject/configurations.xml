@@ -332,7 +332,6 @@
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm0plus.h</itemPath>
                 <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv7.h</itemPath>
-                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -672,9 +671,34 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1"
+                     displayName="ili9488_rgb565_c21.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/le_gfx_intf_spi4.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/gfx_hal_le.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/core.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/sys_input.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/gfx_disp_mxt_cpro_320x480.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/project.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/gfx_legato.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/gfx_maxtouch_controller.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/tc0.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/drv_spi.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/le_gfx_driver_external.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/sercom1.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/sercom2.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.mhc/BSP_SAM_C21_Xplained_Pro.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/ili9488_rgb565_c21/harmony.prj</itemPath>
-      <itemPath>../src/config/ili9488_rgb565_c21/ili9488_rgb565_c21.xml</itemPath>
       <itemPath>../src/config/ili9488_rgb565_c21/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -716,6 +740,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
