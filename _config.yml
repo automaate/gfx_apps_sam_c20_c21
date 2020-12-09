@@ -21,7 +21,7 @@ lang: en-US
 timezone: America/Phoenix
 
 description: Harmony 3 Graphics Application Examples for SAM C20 C21 Family Package
-url: "https://microchip-mplab-harmony.github.io"
+url: "https://mhgc.github.io"
 baseurl: "/gfx_apps_sam_c20_c21"
 remote_theme: "Microchip-MPLAB-Harmony/just-the-docs@mchp-harmony"
 
