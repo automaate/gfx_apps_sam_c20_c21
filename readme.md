@@ -1,4 +1,9 @@
-# ![MPLAB® Harmony Graphics Suite](./docs/html/mhgs.png) MPLAB® Harmony 3 Graphics application examples for SAM C20/C21 Family
+﻿---
+title: Harmony 3 Graphics SAM C20 C21 Applications Package
+nav_order: 1
+---
+
+# ![MPLAB® Harmony Graphics Suite](./docs/images/mhgs.png) MPLAB® Harmony 3 Graphics application examples for SAM C20 C21 Family
 
 MPLAB® Harmony Graphics Suite  is an extension of the MPLAB® ecosystem for creating
 embedded graphics firmware solutions for Microchip 32-bit SAM and PIC microcontroller
@@ -32,5 +37,24 @@ The following applications are provided to demonstrate a subset of the capabilit
 
 | Category | Item | Description | Release Type |
 | --- | --- | ---- |---- |
-|     | [legato_quickstart](./docs/html/LegatoQuickstart.html) | Legato UI library quickstart example | ![app-beta](https://img.shields.io/badge/application-beta-orange?style=plastic) |
-|     
+|     | [legato_quickstart](./apps/legato_quickstart/readme.md) | Legato UI library quickstart example | ![app-beta](https://img.shields.io/badge/application-beta-orange?style=plastic) |
+
+
+____
+
+[![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_pic32mz_da/blob/master/mplab_harmony_license.md)
+[![Latest release](https://img.shields.io/github/release/Microchip-MPLAB-Harmony/gfx.svg)](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_pic32mz_da/releases/latest)
+[![Latest release date](https://img.shields.io/github/release-date/Microchip-MPLAB-Harmony/gfx.svg)](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_pic32mz_da/releases/latest)
+[![Commit activity](https://img.shields.io/github/commit-activity/y/Microchip-MPLAB-Harmony/gfx.svg)](https://github.com/Microchip-MPLAB-Harmony/gfx_apps_pic32mz_da/graphs/commit-activity)
+[![Contributors](https://img.shields.io/github/contributors-anon/Microchip-MPLAB-Harmony/gfx.svg)]()
+
+____
+
+[![Follow us on Youtube](https://img.shields.io/badge/Youtube-Follow%20us%20on%20Youtube-red.svg)](https://www.youtube.com/user/MicrochipTechnology)
+[![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20us%20on%20LinkedIn-blue.svg)](https://www.linkedin.com/company/microchip-technology)
+[![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/microchiptechnology/)
+[![Follow us on Twitter](https://img.shields.io/twitter/follow/MicrochipTech.svg?style=social)](https://twitter.com/MicrochipTech)
+
+[![](https://img.shields.io/github/stars/Microchip-MPLAB-Harmony/gfx.svg?style=social)]()
+[![](https://img.shields.io/github/watchers/Microchip-MPLAB-Harmony/gfx.svg?style=social)]()
+
